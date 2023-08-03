@@ -1,28 +1,12 @@
 program idades;
-var idade:integer;
-begin;
-    writeln('por favor, digite a sua idade');
-    readln(idade);
-    case idade of
-    0..11:
+var idade:array[1..4] of integer; i:integer;
+begin
+    for i := 1 to 4 do
         begin
-            writeln('voce e uma criança');
+        writeln('qual seria a ', i, 'idade?');
+        readln(idade[i]);
         end;
-    12..18:
-        begin
-            writeln('voce e um adolescente');
-        end;
-    19..69:
-        begin
-            writeln('voce e um adulto');
-        end;
-    70..90:
-        begin
-            writeln('benca');
-        end;
-    91..9999:
-        begin
-            writeln('voce foi amigo(a) de infancia da rainha elizabeth quando crianca?')
-        end;
-    end;
+writeln('qual idade voce deseja verificar?');
+readln(idade[i]);
+writeln('a idade selecionada foi: ', idade[i]);
 end.
